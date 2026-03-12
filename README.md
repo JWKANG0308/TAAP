@@ -12,7 +12,7 @@ Dataset page: [CelebA Dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
 ## Sample output:
 
-![TAAP Samples](assets/.png)
+![TAAP Samples](assets/model_TAAP_50.png)
 
 ## Repository structure
 
