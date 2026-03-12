@@ -150,5 +150,5 @@ I found that TAAP generated clearer facial features and more distinguishable ide
 
 ## Citation
 
-If you use or refer to this project, please cite the report in `report/TAAP_report.pdf`.
+If you use or refer to this project, please cite the report in [Project Report](report/TAAP.pdf)
 
