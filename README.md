@@ -1,35 +1,12 @@
-
 # TAAP: Timestep-Adaptive Attribute Preservation for Identity-Preserving Face Generation
 
-TAAP is a diffusion-based face generation project that improves identity preservation by learning a timestep-specific weight for the identity loss during training.
+I implemented TAAP using a standard U-Net with channel multipliers `(1, 2, 4)`, `2` residual blocks per level, and attention at `32×32`. I trained the model for `50` epochs with a model learning rate of `2e-4` and a timestep weighter learning rate of `1e-4`. For sampling, I used `DDIM` with `50` steps.
 
 # Report:
 
 [Project Report](report/TAAP.pdf)
 
-
-## Project summary
-
-Standard DDPMs can generate realistic faces, but they often fail to preserve semantic attributes such as identity. TAAP adds a lightweight **Timestep Attribute Weighter** that learns how important identity supervision should be at each diffusion timestep.
-
-Instead of using a fixed loss:
-
-`L_total = L_DDPM + λ · L_identity`
-
-TAAP learns a timestep-dependent weight:
-
-`L_total = L_DDPM + α_t · L_identity`
-
-According to the report, TAAP was evaluated on **CelebA-64**, trained on a subset of **30,000 images**, and compared against vanilla DDPM and a fixed-weight identity-loss baseline. The report states that TAAP achieved **FID 203.9** and **LPIPS 0.383**, outperforming vanilla DDPM (**FID 257.7, LPIPS 0.428**) and the fixed-weight baseline (**FID 410.5, LPIPS 0.444**). fileciteturn0file0L84-L101
-
-The report also states that the implementation used:
-- a standard U-Net with channel multipliers `(1, 2, 4)`
-- `2` residual blocks per level
-- attention at `32×32`
-- `50` training epochs
-- model learning rate `2e-4`
-- timestep weighter learning rate `1e-4`
-- `DDIM` sampling with `50` steps fileciteturn0file0L156-L175
+## dataset:
 
 ## Repository structure
 
@@ -146,13 +123,15 @@ python evaluate_taap.py \
 
 ## Results
 
+I evaluated TAAP on CelebA-64 using a 30,000-image training subset. I compared it against a vanilla DDPM baseline and a fixed-weight identity-loss baseline. TAAP achieved the best performance, with an FID of 203.9 and an LPIPS of 0.383, outperforming vanilla DDPM (FID 257.7, LPIPS 0.428) and the fixed-weight baseline (FID 410.5, LPIPS 0.444).
+
 Example qualitative samples from the project are stored in:
 
 ```text
 assets/taap_samples.png
 ```
 
-The report notes that TAAP generated clearer facial features and more distinguishable identities than both the vanilla DDPM and the fixed-weight identity-loss baseline. fileciteturn0file0L102-L116
+I found that TAAP generated clearer facial features and more distinguishable identities than both the vanilla DDPM and the fixed-weight identity-loss baseline.
 
 ## Files included in this repo
 
@@ -164,11 +143,12 @@ The report notes that TAAP generated clearer facial features and more distinguis
 
 ## Notes
 
-- This code is adapted from a Colab notebook into plain Python scripts.
-- Google Drive paths such as `/content/drive/...` were replaced with repo-relative paths.
+- I converted this code from a Colab notebook into plain Python scripts.
+- I replaced Google Drive paths such as `/content/drive/...` with repo-relative paths.
 - If you are using GitHub web upload, create the folder structure first, then upload each file into the matching folder.
-- If CelebA is too large for GitHub, do **not** upload the full dataset to GitHub. Keep it locally and add it to `.gitignore`.
+- I did not upload dataset due to it's size
 
 ## Citation
 
 If you use or refer to this project, please cite the report in `report/TAAP_report.pdf`.
+
