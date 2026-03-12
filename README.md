@@ -1,7 +1,8 @@
 # TAAP: Timestep-Adaptive Attribute Preservation for Identity-Preserving Face Generation
 
-I implemented TAAP using a standard U-Net with channel multipliers `(1, 2, 4)`, `2` residual blocks per level, and attention at `32×32`. I trained the model for `50` epochs with a model learning rate of `2e-4` and a timestep weighter learning rate of `1e-4`. For sampling, I used `DDIM` with `50` steps.
+TAAP is a diffusion-based face generation project focused on preserving facial identity. Vanilla DDPMs often produce realistic faces, but they can lose identity consistency during generation. To address this, I proposed TAAP (Timestep-Adaptive Attribute Preservation), which learns a timestep-specific weight for identity loss instead of applying the same supervision across all diffusion steps.
 
+This design keeps the training framework simple while better aligning identity supervision with the diffusion process. I implemented TAAP with a standard U-Net backbone and a lightweight timestep weighter trained jointly with the diffusion model. For inference, the auxiliary weighter is not required, so the final model remains compatible with standard DDIM sampling. I trained the model on CelebA-64 for `50` epochs and used `DDIM` sampling with `50` steps.
 # Report:
 
 [Project Report](report/TAAP.pdf)
