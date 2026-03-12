@@ -5,7 +5,7 @@ TAAP is a diffusion-based face generation project that improves identity preserv
 
 # Report:
 
-You can find paper of this project in report/TAAP.pdf
+[Final Project Report](report/TAAP.pdf)
 
 
 ## Project summary
