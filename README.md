@@ -3,7 +3,10 @@
 
 TAAP is a diffusion-based face generation project that improves identity preservation by learning a timestep-specific weight for the identity loss during training.
 
-This repository is a cleaned GitHub version of the original Google Colab project. The original notebook paths were converted into normal relative project paths so the code can be run locally or on a server without Google Drive mounting.
+# Report:
+
+You can find paper of this project in report/TAAP_report.pdf
+
 
 ## Project summary
 
