@@ -15,18 +15,15 @@ TAAP/
 ├─ train_taap.py
 ├─ evaluate_taap.py
 ├─ requirements.txt
-├─ .gitignore
-├─ data/
-│  └─ img_align_celeba/              
+├─ .gitignore          
 ├─ assets/
 │  ├─ unused_indices_for_eval.npy
 │  └─ taap_samples.png
 ├─ outputs/
 │  ├─ checkpoints/
 │  └─ samples/
-├─ evaluation_results/
 └─ report/
-   └─ TAAP_report.pdf
+   └─ TAAP.pdf
 ```
 
 ## Setup
