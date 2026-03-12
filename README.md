@@ -7,7 +7,8 @@ I implemented TAAP using a standard U-Net with channel multipliers `(1, 2, 4)`, 
 [Project Report](report/TAAP.pdf)
 
 ## dataset:
-
+I used the CelebA dataset for this project.  
+Dataset page: [CelebA Dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
 ## Repository structure
 
 ```text
