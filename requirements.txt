@@ -1,0 +1,9 @@
+torch
+torchvision
+facenet-pytorch
+matplotlib
+numpy
+Pillow
+tqdm
+lpips
+pytorch-fid
