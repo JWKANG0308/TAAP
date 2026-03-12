@@ -20,9 +20,6 @@ TAAP/
 ├─ assets/
 │  ├─ unused_indices_for_eval.npy
 │  └─ taap_samples.png
-├─ outputs/
-│  ├─ checkpoints/
-│  └─ samples/
 └─ report/
    └─ TAAP.pdf
 ```
